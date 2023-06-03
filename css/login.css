@@ -37,7 +37,7 @@ body{
     content: "";
     position: absolute;
     background: white;
-    background: linear-gradient(to right, rgb(255, 228, 225), rgb(255, 192, 203));
+    background: linear-gradient(to right, rgb(255, 228, 225), rgb(255, 190, 200));
     width:40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -179,11 +179,24 @@ body{
 }
 
 .form input {
+    display: flex;
+    align-items: center;
+    padding: 5px;
     width: 100%;
     height: 45px;
     border: none;
     background-color: #ecf0f1;
+    font-size: 20px;
 }
+
+input::placeholder {
+    font-size: 16px;
+  }
+
+input:focus {
+    outline: none;
+}
+  
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
@@ -200,6 +213,7 @@ input:-webkit-autofill {
 .icon-modify {
     color: black;
     padding: 0px 5px;
+    margin-right: 25px;
 }
 
 /* SECOND-CONTENT */

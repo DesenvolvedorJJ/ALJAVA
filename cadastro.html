@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- CSS -->
     <link rel="stylesheet" href="css/login.css">
     <!-- FONTWESOME -->
     <script src="https://kit.fontawesome.com/e3e0ab7579.js" crossorigin="anonymous"></script>
@@ -16,9 +15,9 @@
         <div class="content first-content">
 
             <div class="first-column">
-                <h2 class="title title-primary">Bem Vindo!</h2>
-                <p class="description description-primary">Para continuar conectado conosco</p>
-                <p class="description description-primary">por favor, cadastre suas informações pessoais</p>
+                <h2 class="title title-primary">Já tem conta?</h2>
+                <p class="description description-primary">continue conectado conosco</p>
+                <p class="description description-primary">clicando no botão abaixo</p>
                 <button id="signin" class="btn btn-primary">login</button>
             </div><!-- FIRST-COLUMN -->
 
@@ -41,12 +40,24 @@
                 <form class="form">
                     <label class="label-input icon-modify" for="">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Nome Completo">
                     </label>
+
+                    <label class="label-input icon-modify" for="">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" id="data-input" placeholder="Data de Nascimento">
+                    </label>
+
+                    <label class="label-input icon-modify" for="">
+                        <i class="far fa-id-card"></i>
+                        <input type="text" id="data-input" placeholder="CPF">
+                    </label>
+
                     <label class="label-input icon-modify" for="">
                         <i class="fas fa-envelope"></i>
                         <input type="email" placeholder="Email">
                     </label>
+
                     <label class="label-input icon-modify" for="">
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Senha">
@@ -61,8 +72,8 @@
 
             <div class="first-column">
                 <h2 class="title title-primary">Olá!</h2>
-                <p class="description description-primary">Insira seu dados</p>
-                <p class="description description-primary">e conecte-se à sua conta.</p>
+                <p class="description description-primary">Novo por aqui?</p>
+                <p class="description description-primary">registre-se clicando no botão abaixo</p>
                 <button id="signup" class="btn btn-primary">registre-se</button>
             </div><!-- FIRST-COLUMN -->
 
