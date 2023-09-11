@@ -1,0 +1,66 @@
+/* Reset de estilos padrão */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilize o container principal */
+.container {
+    display: flex;
+    align-items: center; /* Centralize verticalmente o conteúdo */
+    justify-content: space-between; /* Distribua o espaço horizontalmente */
+    padding: 20px;
+    height: 100vh; /* Faça com que o container ocupe a altura total da tela */
+}
+
+/* Estilize a div da imagem */
+.imagem {
+    flex: 1;
+    padding: 20px;
+    position: relative; /* Adicione posicionamento relativo para controlar o efeito de zoom */
+    overflow: hidden; /* Ocultar partes da imagem fora do container */
+}
+
+.imagem img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Adicione uma transição suave para o efeito de zoom */
+}
+
+/* Adicione uma regra de hover para aplicar o zoom */
+.imagem:hover img {
+    transform: scale(1.8); /* Aumentar o tamanho da imagem em 80% quando o cursor estiver sobre ela */
+}
+
+
+/* Estilize a div das informações como um card */
+.informacoes {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff; /* Cor de fundo do card */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra do card */
+}
+
+/* Estilos para o restante do conteúdo (mantidos como estão) */
+.informacoes h1,
+.informacoes h2 {
+    text-align: left;
+}
+
+.preco {
+    margin-top: 10px;
+}
+
+.opcoes {
+    margin-top: 20px;
+}
+
+.botao {
+    background-color: #FF136F;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}

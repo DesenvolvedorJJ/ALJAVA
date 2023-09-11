@@ -16,7 +16,7 @@ if (result) {
 	 %>
 	 <script language="JavaScript">
 	     alert("Login realizado com sucesso");
-	     window.location.href = "../Codes/home.html"
+	     window.location.href = "../Codes/Home.jsp"
 	 </script>
 	 <%
 	 } else {

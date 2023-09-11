@@ -1,6 +1,12 @@
+<%@page import="Model.Produto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Dao.ProdutoDao"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,21 +31,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Shoes">Shoes</a>
+              <a class="nav-link" href="#Shoes"><strong>Shoes</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Backpack">Mochilas</a>
+              <a class="nav-link" href="#Backpack"><strong>Mochilas</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#contact-us">Contato</a>
+              <a class="nav-link " href="#contact-us"><strong>Contato</strong></a>
             </li>
           </ul>
         </div>
       
-      <form class="d-flex  search1 ">
+      <form class="search1 text-end">
         <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
       </form>
@@ -134,10 +140,21 @@
       <div class="card">
         <img src="images/shoe-1.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Supply 450</h5>
-          <p class="card-text">O tênis Supply 450 oferece estilo e conforto para seus pés. </p>
-          <h5>R$320</h5>
-          <button class="buy-now-btn"> Comprar Agora >></button>
+        	<%
+			    ProdutoDao produtoDao = new ProdutoDao();
+			    ArrayList<Produto> produtos = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos) {
+			        if (p.getId_produto() == 1) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
+          <a href="../Codes/produtos/produto1.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -146,10 +163,21 @@
       <div class="card">
         <img src="images/shoe-2.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Nike 120</h5>
-          <p class="card-text">Experimente a combinação perfeita de desempenho e estilo com o tênis Nike 120.</p>
-          <h5>R$230</h5>
-          <button class="buy-now-btn"> Comprar Agora >></button>
+          <%
+			    ProdutoDao produto2Dao = new ProdutoDao();
+			    ArrayList<Produto> produtos2 = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos2) {
+			        if (p.getId_produto() == 2) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
+          <a href="../Codes/produtos/produto2.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -158,11 +186,21 @@
       <div class=" card ">
         <img src="images/shoe-3.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Red Air Max</h5>
-
-          <p class="card-text">Destaque-se da multidão com o estilo único do Air Max.</p>
-          <h5>R$230</h5>
-          <button class="buy-now-btn"> Comprar Agora >></button>
+          <%
+			    ProdutoDao produto3Dao = new ProdutoDao();
+			    ArrayList<Produto> produtos3 = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos3) {
+			        if (p.getId_produto() == 3) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
+          <a href="../Codes/produtos/produto3.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -174,28 +212,25 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
-          <img src="images/bag.png" class="card-img-top" alt="...">
+          <img src="images/bag-1.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Black yiur bag</h5>
-            <h5>R$120</h5>
-           
-            <p class="card-text"> Versátil e elegante, esta mochila é a escolha perfeita para qualquer ocasião.</p>
+           <%
+			    ProdutoDao produto4Dao = new ProdutoDao();
+			    ArrayList<Produto> produtos4 = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos4) {
+			        if (p.getId_produto() == 4) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
           </div>
           <div class="card-footer">
-            <button class="buy-now-btn"> Comprar Agora >></button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="images/bag-3.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Black Small bag</h5>
-            <h5>R$50</h5>
-            <p class="card-text">Leve o essencial com você aonde quer que vá com a praticidade deste modelo.</p>
-          </div>
-          <div class="card-footer">
-            <button class="buy-now-btn"> Comprar Agora >></button>
+            <a href="../Codes/produtos/produto4.jsp" class="buy-now-btn">Comprar Agora </a>
           </div>
         </div>
       </div>
@@ -203,12 +238,47 @@
         <div class="card h-100">
           <img src="images/bag-2.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Blue Black bag</h5>
-            <h5>R$70</h5>
-            <p class="card-text">Adicione um toque de cor ao seu estilo com a mochila azul moderna e funcional.</p>
+            <%
+			    ProdutoDao produto5Dao = new ProdutoDao();
+			    ArrayList<Produto> produtos5 = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos5) {
+			        if (p.getId_produto() == 5) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
           </div>
           <div class="card-footer">
-            <button class="buy-now-btn"> Comprar Agora >></button>
+            <a href="../Codes/produtos/produto5.jsp" class="buy-now-btn">Comprar Agora</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/bag-3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <%
+			    ProdutoDao produto6Dao = new ProdutoDao();
+			    ArrayList<Produto> produtos6 = produtoDao.ArrayListarProduto();
+			
+			    for (Produto p : produtos6) {
+			        if (p.getId_produto() == 6) {
+			%>
+			            <h5 class="card-title"><%= p.getNome() %></h5>
+			            <p class="card-text"><%= p.getDescricao() %></p>
+          				<h5>R$ <%= p.getPreco() %></h5>
+			<%
+			        }
+			    }
+			%>
+          </div>
+          <div class="card-footer">
+            <a href="../Codes/produtos/produto6.jsp" class="buy-now-btn">Comprar Agora</a>
           </div>
         </div>
       </div>

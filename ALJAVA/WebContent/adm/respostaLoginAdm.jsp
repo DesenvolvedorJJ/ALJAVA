@@ -1,4 +1,4 @@
-<%@page import="Dao.ClienteDao"%>
+<%@page import="Dao.AdmDao"%>
 <%@page import="Model.Adm"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,14 +9,14 @@ String usuario = request.getParameter("usuario");
 String senha = request.getParameter("senha");
 
 
-ClienteDao clienteDao = new ClienteDao();
-result = clienteDao.VerificarLoginAdm(usuario, senha);
+AdmDao admDao = new AdmDao();
+result = admDao.VerificarLoginAdm(usuario, senha);
 	 
 if (result) {
 	 %>
 	 <script language="JavaScript">
 	     alert("Login realizado com sucesso");
-	     window.location.href = "ListarCliente.jsp"
+	     window.location.href = "homeAdm.html"
 	 </script>
 	 <%
 	 } else {

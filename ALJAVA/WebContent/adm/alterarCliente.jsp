@@ -11,14 +11,15 @@ cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("idcl
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/alterarCliente.css">
+<link rel="stylesheet" href="./css/alterar.css">
+
 <title>Formulario de Alteração</title>
 </head>
 <body>
 	 <div class="second-column">
                 <h2 class="title title-second">Alterar Cliente</h2>
                    
-				<form id="formCliente" name="formCliente" method="POST" action="respostaAlteracao.jsp">
+				<form id="formCliente" name="formCliente" method="POST" action="respostaAlterarCliente.jsp">
                     
                     <label class="label-input icon-modify" for="">
                         <i class="fas fa-user"></i>

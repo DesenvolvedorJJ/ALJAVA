@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/cadastroCliente.css">
+    <link rel="stylesheet" href="css/cadastroCliente.css">    
     <!-- FONTWESOME -->
     <script src="https://kit.fontawesome.com/e3e0ab7579.js" crossorigin="anonymous"></script>
 </head>
@@ -107,7 +107,7 @@
 			            <input type="password" name="senha" placeholder="Senha">
 			        </label>
   						<a class="password" href="#">esqueceu a senha?</a>
-  						<a class="text" href="LoginADM.jsp">Logar como ADM</a>
+  						<a class="text" href="../adm/LoginADM.jsp">Logar como ADM</a>
 			        <button type="submit" class="btn btn-second">entrar</button>
 			    </form>
 			</div><!-- SECOND-COLUMN -->

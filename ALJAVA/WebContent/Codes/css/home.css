@@ -14,10 +14,11 @@
 .buy-now-btn{
   background-image: linear-gradient(to bottom,#FF589B 0%, rgb(255, 88, 155) 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   color: white;
-  padding: 8px 25px;
-  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
 }
 .bg-col1{
   background-color:#FFA500;
@@ -65,4 +66,10 @@ width:100px;
 
   background-color: none;
   border-top:none;
+}
+
+.search1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
 }
