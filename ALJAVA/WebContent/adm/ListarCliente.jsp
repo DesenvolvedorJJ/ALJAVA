@@ -1,4 +1,4 @@
-	<%@page import="Model.Cliente"%>
+<%@page import="Model.Cliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ClienteDao"%>
 

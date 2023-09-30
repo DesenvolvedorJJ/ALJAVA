@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px; /* Adicione margens maiores */
+    padding: 20px;
+    background-color:azure;
+    color: #333;
+}
+
+.second-column {
+    background-color: rgb(255, 190, 200)fff;
+    border: none;
+    padding: 20px;
+}
+
+.title {
+    color: black;
+}
+
+.label-input {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.label-input i {
+    margin-right: 10px;
+    color: #FF136F;
+}
+
+.label-input input[type="text"],
+.label-input input[type="date"],
+.label-input input[type="button"]
+{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #FF136F;
+    background-color: transparent;
+    color: whi;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-second {
+    background-color: #FF136F;
+}

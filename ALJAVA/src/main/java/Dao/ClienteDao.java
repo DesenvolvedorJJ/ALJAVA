@@ -16,7 +16,7 @@ public class ClienteDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			con.executeUpdate("INSERT INTO cliente(nome, dt_nascimento, cpf, email, senha) VALUES ('"
+			con.executeUpdate("INSERT INTO clientes(nome, dt_nascimento, cpf, email, senha) VALUES ('"
 					+ c.getNome() + "','"
 					+ c.getDt_nascimento() + "','"
 					+ c.getCpf() + "','"
@@ -33,13 +33,13 @@ public class ClienteDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			ResultSet result = con.executeQuery("SELECT * FROM cliente;");
+			ResultSet result = con.executeQuery("SELECT * FROM clientes;");
 			ArrayList<Cliente> listarCliente = new ArrayList<Cliente>();
 			int i = 0;
 			
 			while(result.next()) {
 				Cliente cliente = new Cliente();
-				cliente.setId_cliente(result.getInt("id_cliente"));
+				cliente.setId_cliente(result.getInt("id"));
 				cliente.setNome(result.getString("nome"));
 				cliente.setDt_nascimento(result.getString("dt_nascimento"));
 				cliente.setCpf(result.getString("cpf"));
@@ -59,11 +59,11 @@ public class ClienteDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			ResultSet result = con.executeQuery("SELECT * FROM cliente WHERE id_cliente =" + id);
+			ResultSet result = con.executeQuery("SELECT * FROM clientes WHERE id =" + id);
 			result.next();
 			
 			Cliente cliente = new Cliente();
-			cliente.setId_cliente(result.getInt("id_cliente"));
+			cliente.setId_cliente(result.getInt("id"));
 			cliente.setNome(result.getString("nome"));
 			cliente.setDt_nascimento(result.getString("dt_nascimento"));
 			cliente.setCpf(result.getString("cpf"));
@@ -80,7 +80,7 @@ public class ClienteDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			con.executeUpdate("UPDATE cliente SET "
+			con.executeUpdate("UPDATE clientes SET "
 					+ "nome='"+ cliente.getNome() +"', "
 					+ "dt_nascimento='"+ cliente.getDt_nascimento() +"',"
 					+ "cpf='"+ cliente.getCpf() +"',"
@@ -98,7 +98,7 @@ public class ClienteDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			con.executeUpdate("DELETE FROM cliente WHERE id_cliente=" + id);
+			con.executeUpdate("DELETE FROM clientes WHERE id=" + id);
 			return true;
 		}catch(SQLException e) {
 			System.out.println("Erro na função deletar cliente DAO" + e);
@@ -110,7 +110,7 @@ public class ClienteDao {
 		   Conexao con = null;
 		   try {
 			   con = new Conexao();
-			   ResultSet result = con.executeQuery("SELECT * FROM cliente Where email = '"+ Email +"' AND senha ='" + Senha +"'");
+			   ResultSet result = con.executeQuery("SELECT * FROM clientes Where email = '"+ Email +"' AND senha ='" + Senha +"'");
 			   
 			   if(result.next()) {
 				   System.out.print("Usuário já cadastrado");

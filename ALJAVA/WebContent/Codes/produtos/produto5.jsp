@@ -2,6 +2,12 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProdutoDao"%>
 
+<%
+ProdutoDao produtodao = new ProdutoDao();
+Produto produto = new Produto();
+produto = produtodao.ListarProdutoID(Integer.parseInt(request.getParameter("id_produto")));
+%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,6 +40,8 @@
 			            <p>Marca: <strong><%= p.getMarca() %></strong><br>
 			                Modelo: <strong><%= p.getModelo() %></strong><br>
 			                Disponibilidade: <strong><%= p.getDisponibilidade() %></strong></p>
+			            
+				            
 			            <div class="precos">
 			                <span class="preco"><strong>R$ <%= p.getPreco() %></strong></span>
 			            </div>
@@ -41,19 +49,17 @@
 			        }
 			    }
 			%>
+
             <div class="opcoes">
-                <form id="carrinhoForm" action="ProdutoCarrinho.jsp" method="post">
-                    <input type="hidden" name="numero" value="36">
-                    <a href="URL_DA_PAGINA_DE_CARRINHO_AQUI" 
-                    class="botao" 
-                    onclick="document.getElementById('carrinhoForm').submit();"> 
-                        Adicione ao carrinho
-                    </a>
+                <form id="carrinhoForm" action="../pedidos/Pedido.jsp?idcliente=1&id_produto=<%=produto.getId_produto()%>&id_tamanho=14" method="post">
+                    
+           <button class="botao" type="submit" >Comprar</button>
+
                 </form>
             </div>
         </div>
     </div>
-
-    
-</body>
+	
+	</body>
 </html>
+			            

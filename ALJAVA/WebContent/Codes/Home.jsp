@@ -150,11 +150,11 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto1.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
-          <a href="../Codes/produtos/produto1.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -173,11 +173,11 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto2.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
-          <a href="../Codes/produtos/produto2.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -196,11 +196,11 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto3.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
-          <a href="../Codes/produtos/produto3.jsp" class="buy-now-btn">Comprar Agora </a>
         </div>
 
       </div>
@@ -224,13 +224,13 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto4.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
           </div>
           <div class="card-footer">
-            <a href="../Codes/produtos/produto4.jsp" class="buy-now-btn">Comprar Agora </a>
           </div>
         </div>
       </div>
@@ -248,13 +248,13 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto5.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
           </div>
           <div class="card-footer">
-            <a href="../Codes/produtos/produto5.jsp" class="buy-now-btn">Comprar Agora</a>
           </div>
         </div>
       </div>
@@ -272,13 +272,13 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
+          				<a href="../Codes/produtos/produto6.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
 			<%
 			        }
 			    }
 			%>
           </div>
           <div class="card-footer">
-            <a href="../Codes/produtos/produto6.jsp" class="buy-now-btn">Comprar Agora</a>
           </div>
         </div>
       </div>

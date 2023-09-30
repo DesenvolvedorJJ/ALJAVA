@@ -1,8 +1,9 @@
 package Dao;
 import java.sql.ResultSet; 	
+
+
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import Model.Produto;
 import Util.Conexao;
 import java.sql.Connection;
@@ -42,7 +43,7 @@ public class ProdutoDao {
 			
 			while(result.next()) {
 				Produto produto = new Produto();
-				produto.setId_produto(result.getInt("id_produto"));
+				produto.setId_produto(result.getInt("id"));
 				produto.setNome(result.getString("nome"));
 				produto.setTipo(result.getString("tipo"));
 				produto.setDescricao(result.getString("descricao"));
@@ -65,11 +66,11 @@ public class ProdutoDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			ResultSet result = con.executeQuery("SELECT * FROM produtos WHERE id_produto =" + id_produto);
+			ResultSet result = con.executeQuery("SELECT * FROM produtos WHERE id =" + id_produto);
 			result.next();
 			
 			Produto produto = new Produto();
-			produto.setId_produto(result.getInt("id_produto"));
+			produto.setId_produto(result.getInt("id"));
 			produto.setNome(result.getString("nome"));
 			produto.setTipo(result.getString("tipo"));
 			produto.setDescricao(result.getString("descricao"));
@@ -110,13 +111,14 @@ public class ProdutoDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			con.executeUpdate("DELETE FROM produtos WHERE id_produto=" + id_produto);
+			con.executeUpdate("DELETE FROM produtos WHERE id =" + id_produto);
 			return true;
 		}catch(SQLException e) {
 			System.out.println("Erro na função deletar produto DAO" + e);
 			return false;
 		}
 	}
+	
 
-
+	
 }

@@ -1,4 +1,5 @@
 <%@page import="Model.Produto"%>
+<%@page import="Model.Tamanho"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProdutoDao"%>
 
