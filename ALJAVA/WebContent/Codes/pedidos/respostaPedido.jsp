@@ -19,13 +19,19 @@ PedidoDao pedidoDao = new PedidoDao();
 resultado = pedidoDao.InserirPedido(pedido);
 
 if(resultado){ %>
-<script language="JavaScript">
+	<form id="clienteForm" action="../Home.jsp" method="POST">
+	<input type="hidden" name="id_cliente" value="<%= id_cliente %>">
+	</form>
+	<script language="JavaScript">
+	document.getElementById("clienteForm").submit();
 	alert('Pedido Realizado.');
-	window.location.href="../Home.jsp"
-</script>
+	</script>
 <% }else{ %>
-<script language="JavaScript">
-	alert('Não foi possível realizar o pedido.');
-	window.location.href="../Home.jsp"
-</script>
+<form id="clienteForm" action="../Home.jsp" method="POST">
+	<input type="hidden" name="id_cliente" value="<%= id_cliente %>">
+	</form>
+	<script language="JavaScript">
+	document.getElementById("clienteForm").submit();
+	alert('Pedido Realizado.');
+	</script>
 <%} %>

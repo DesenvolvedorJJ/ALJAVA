@@ -26,8 +26,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Data da Compra</th>
-                    <th>ID do cliente</th>
-                    <th>ID do produto</th>
+                    <th>Cliente</th>
+                    <th>Produto</th>
                     <th>Visualizar informações</th>
                     <th>Excluir</th>
                 </tr>
@@ -38,8 +38,8 @@ for(Pedido p: pedido){%>
 	<tr>
 		<td><%= p.getId_pedido() %></td>
 		<td><%= p.getDt_compra() %></td>
-		<td><%= p.getId_cliente() %></td>
-		<td><%= p.getId_produto() %></td>
+		<td><%= p.getNome_Cliente() %></td>
+		<td><%= p.getH2() %></td>
 		<td> <a href="verPedido.jsp?id_pedido=<%=p.getId_pedido()%>"> <img src="img/ver.png" width="20px" height="20px" > </a></td>
 		<td> <a href="deletarPedido.jsp?id_pedido=<%=p.getId_pedido()%>"> <img src="img/excluir.png" width="20px" height="20px"> </a> </td>
 	</tr>

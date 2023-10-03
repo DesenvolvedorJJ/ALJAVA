@@ -1,10 +1,17 @@
 <%@page import="Model.Produto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProdutoDao"%>
-
+<%@page import="Dao.ClienteDao"%>
+<%@page import="Model.Cliente"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<%
+ClienteDao clientedao = new ClienteDao();
+Cliente cliente = new Cliente();
+cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("id_cliente")));
+%>    
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -150,7 +157,13 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto1.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto1.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
+
 			<%
 			        }
 			    }
@@ -173,7 +186,12 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto2.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto2.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
 			<%
 			        }
 			    }
@@ -196,7 +214,12 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto3.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto3.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
 			<%
 			        }
 			    }
@@ -224,7 +247,12 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto4.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto4.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
 			<%
 			        }
 			    }
@@ -248,7 +276,12 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto5.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto5.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
 			<%
 			        }
 			    }
@@ -272,7 +305,12 @@
 			            <h5 class="card-title"><%= p.getNome() %></h5>
 			            <p class="card-text"><%= p.getDescricao() %></p>
           				<h5>R$ <%= p.getPreco() %></h5>
-          				<a href="../Codes/produtos/produto6.jsp?id_produto=<%=p.getId_produto()%>" class="buy-now-btn">Comprar Agora </a>
+          				
+          				<form action="../Codes/produtos/produto6.jsp" method="POST" class="buy-now-form">
+						  <input type="hidden" name="id_cliente" value="<%= cliente.getId_cliente() %>">
+						  <input type="hidden" name="id_produto" value="<%= p.getId_produto() %>">
+						  <button type="submit" class="buy-now-btn">Comprar Agora</button>
+						</form>
 			<%
 			        }
 			    }

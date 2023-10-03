@@ -32,17 +32,26 @@ public class PedidoDao {
 		Conexao con = null;
 		try {
 			con = new Conexao();
-			ResultSet result = con.executeQuery("SELECT * FROM pedidos;");
+			ResultSet result = con.executeQuery("SELECT"
+					+ " p.id,"
+					+ " p.dt_compra,"
+					+ " c.nome,"
+					+ " pr.h2"
+					+ " FROM"
+					+ " pedidos p"
+					+ " JOIN"
+					+ " clientes c ON p.id_cliente = c.id"
+					+ " JOIN"
+					+ " produtos pr ON p.id_produto = pr.id");
 			ArrayList<Pedido> listarPedido = new ArrayList<Pedido>();
 			int i = 0;
 			
 			while(result.next()) {
 				Pedido pedido = new Pedido();
-				pedido.setId_pedido(result.getInt("id"));
-				pedido.setDt_compra(result.getString("dt_compra"));
-				pedido.setId_cliente(result.getInt("id_cliente"));
-				pedido.setId_produto(result.getInt("id_produto"));
-				pedido.setId_tamanho(result.getInt("id_tamanho"));
+				pedido.setId_pedido(result.getInt("p.id"));
+				pedido.setDt_compra(result.getString("p.dt_compra"));
+				pedido.setNome_Cliente(result.getString("c.nome"));
+				pedido.setH2(result.getString("pr.h2"));
 				listarPedido.add(i, pedido);
 				i++;
 			}

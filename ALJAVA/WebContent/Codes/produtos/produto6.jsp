@@ -1,6 +1,14 @@
+<%@page import="Model.Cliente"%>
 <%@page import="Model.Produto"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProdutoDao"%>
+<%@page import="Dao.ClienteDao"%>
+
+<%
+ClienteDao clientedao = new ClienteDao();
+Cliente cliente = new Cliente();
+cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("id_cliente")));
+%>
 
 <%
 ProdutoDao produtodao = new ProdutoDao();
@@ -50,11 +58,14 @@ produto = produtodao.ListarProdutoID(Integer.parseInt(request.getParameter("id_p
 			%>
 
             <div class="opcoes">
-                <form id="carrinhoForm" action="../pedidos/Pedido.jsp?idcliente=1&id_produto=<%=produto.getId_produto()%>&id_tamanho=14" method="post">
-                    
-           <button class="botao" type="submit" >Comprar</button>
-
-                </form>
+                
+                <form id="carrinhoForm" action="../pedidos/Pedido.jsp" method="post">
+				  <input type="hidden" name="id_cliente" value="<%=cliente.getId_cliente()%>">
+				  <input type="hidden" name="id_produto" value="<%=produto.getId_produto()%>">
+				  <input type="hidden" name="id_tamanho" value="12">
+				  <button class="botao" type="submit">Comprar</button>
+				</form>
+				
             </div>
         </div>
     </div>	

@@ -10,7 +10,7 @@
 <%
 ClienteDao clientedao = new ClienteDao();
 Cliente cliente = new Cliente();
-cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("idcliente")));
+cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("id_cliente")));
 %>
 
 <%

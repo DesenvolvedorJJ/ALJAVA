@@ -106,7 +106,7 @@ public class ClienteDao {
 		}
 	}
 
-	public boolean VerificarLogin(String Email, String Senha) {
+	public int VerificarLogin(String Email, String Senha) {
 		   Conexao con = null;
 		   try {
 			   con = new Conexao();
@@ -114,7 +114,7 @@ public class ClienteDao {
 			   
 			   if(result.next()) {
 				   System.out.print("Usuário já cadastrado");
-				   return true;
+				   return result.getInt("id");
 			   }
 			   else {
 				   System.out.print("Usuário não cadastrado");
@@ -124,7 +124,7 @@ public class ClienteDao {
 	   }catch(SQLException e) {
 		 
 	   }
-		   return false;
+		   return 0;
 	   }
 
 }

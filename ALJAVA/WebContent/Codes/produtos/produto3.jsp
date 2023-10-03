@@ -1,8 +1,16 @@
+<%@page import="Model.Cliente"%>
 <%@page import="Model.Produto"%>
 <%@page import="Model.Tamanho"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProdutoDao"%>
 <%@page import="Dao.TamanhoDao"%>
+<%@page import="Dao.ClienteDao"%>
+
+<%
+ClienteDao clientedao = new ClienteDao();
+Cliente cliente = new Cliente();
+cliente = clientedao.ListarClienteID(Integer.parseInt(request.getParameter("id_cliente")));
+%>
 
 <%
 ProdutoDao produtodao = new ProdutoDao();
@@ -46,17 +54,17 @@ produto = produtodao.ListarProdutoID(Integer.parseInt(request.getParameter("id_p
 			            <div class="tamanho-container">
 				                <!-- Botões de tamanho -->
 				                <%
-				                TamanhoDao[] tamanhodao = new TamanhoDao[13];
-				                Tamanho[] tamanhos = new Tamanho[13];
+				                TamanhoDao[] tamanhodao = new TamanhoDao[11];
+				                Tamanho[] tamanhos = new Tamanho[11];
 				
-				                for (int i = 0; i < 13; i++) {
+				                for (int i = 0; i < 11; i++) {
 				                    tamanhodao[i] = new TamanhoDao();
 				                    tamanhos[i] = tamanhodao[i].ListarTamanhoID(i + 1);
 				                }
 				
 								%>
 				               
-				<% for (int i = 0; i < 13; i++) { %>
+				<% for (int i = 0; i < 11; i++) { %>
 				    <div class="tamanho-btn" id="tamanho-btn" value="<%= tamanhos[i].getId_tamanho()%>" 
 				    onclick="tamanho(<%= tamanhos[i].getId_tamanho()%>)">
 				        <%= tamanhos[i].getTamanho() %>
@@ -74,14 +82,14 @@ produto = produtodao.ListarProdutoID(Integer.parseInt(request.getParameter("id_p
 			%>
 
             <div class="opcoes">
-                <form id="carrinhoForm" action="../pedidos/Pedido.jsp?idcliente=1&id_produto=<%=produto.getId_produto()%>" method="post">
-                    
-                    <input type="hidden" name="id_tamanho" id="id_tamanho">
-                    
-                    
-           <button class="botao" type="submit" >Comprar</button>
-
-                </form>
+                
+                <form id="carrinhoForm" action="../pedidos/Pedido.jsp" method="post">
+				  <input type="hidden" name="id_cliente" value="<%=cliente.getId_cliente()%>">
+				  <input type="hidden" name="id_produto" value="<%=produto.getId_produto()%>">
+				  <input type="hidden" name="id_tamanho" id="id_tamanho">
+				  <button class="botao" type="submit">Comprar</button>
+				</form>
+				
             </div>
         </div>
     </div>

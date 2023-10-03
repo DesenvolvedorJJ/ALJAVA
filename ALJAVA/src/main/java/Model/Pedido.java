@@ -10,6 +10,7 @@ public class Pedido {
 	int id_produto;
 	String nome_produto;
 	String tipo;
+	String h2;
 	String marca;
 	String modelo;
 	int id_tamanho;
@@ -89,6 +90,12 @@ public class Pedido {
 		this.tipo = tipo;
 	}
 	
+	public String getH2() {
+		return h2;
+	}
+	public void setH2(String h2) {
+		this.h2 = h2;
+	}
 	
 	public String getMarca() {
 		return marca;
